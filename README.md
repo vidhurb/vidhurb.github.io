@@ -21,20 +21,20 @@ Build using HTML, CSS and JavaScript. I'm prettry proud of it.
 
 <p align="center">
   <img src="./img/Screenshot (42).png" alt="Site Preview 2"
-       width="900" height="500>
+       width="450" height="250">
 </p>
 
 <p align="center">
   <img src="./img/Screenshot (43).png" alt="Site Preview 2"
-       width="900" height="500>
+       width="450" height="250">
 </p>
 
 <p align="center">
   <img src="./img/Screenshot (44).png" alt="Site Preview 2"
-       width="900" height="500>
+       width="450" height="250">
 </p>
 
 <p align="center">
   <img src="./img/Screenshot (45).png" alt="Site Preview 2"
-       width="900" height="500>
+       width="450" height="250">
 </p>
