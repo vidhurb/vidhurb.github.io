@@ -14,7 +14,7 @@ Build using HTML, CSS and JavaScript. I'm prettry proud of it.
 ## Site Previews
 <p align="center">
   <img src="./img/Screenshot (41).png" alt="Site Preview"
-       width="900" height="500">
+       width="450" height="250">
 </p>
 
 
