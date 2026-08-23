@@ -1,287 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidhur B Preman — Staff Engineer, WLAN &amp; Bluetooth Coexistence</title>
-<meta name="description" content="Vidhur B Preman — Staff Firmware Engineer specializing in Wi-Fi/Bluetooth coexistence, embedded systems, and automotive infotainment.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0D10'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' fill='%2349D9E8' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhur B Preman — Staff Engineer, WLAN &amp; Bluetooth Coexistence</title>
+  <meta name="description"
+    content="Vidhur B Preman — Staff Firmware Engineer specializing in Wi-Fi/Bluetooth coexistence, embedded systems, and automotive infotainment.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='10' fill='%230C1017' stroke='%233FCFDF' stroke-width='4'/%3E%3Ctext x='50' y='68' font-family='monospace' font-weight='bold' font-size='50' fill='%233FCFDF' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">VBP<span class="logo-dot">/</span><span class="logo-sub">firmware</span></a>
-    <nav class="site-nav" id="site-nav">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- Ambient Background Effects -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-wlan"></div>
+    <div class="blob blob-bt"></div>
   </div>
-</header>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div id="cursor-glow"></div>
 
-<main id="main">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="wrap hero-inner">
-      <p class="eyebrow" data-reveal>STAFF ENGINEER &mdash; WLAN &amp; BLUETOOTH COEXISTENCE</p>
-      <h1 data-reveal>Vidhur B Preman</h1>
-      <p class="hero-lede" data-reveal>
-        I write the firmware that decides, microsecond by microsecond, whether a chip's antenna
-        belongs to Wi&#8209;Fi or Bluetooth. Seven-plus years turning two radios and one shared
-        medium into something that just works &mdash; from Samsung Exynos silicon to infotainment
-        systems on the road at VW, Mercedes&#8209;Benz, JLR, Tata, and Citro&euml;n.
-      </p>
-      <div class="hero-actions" data-reveal>
-        <a class="btn btn-primary" href="mailto:vidhur@outlook.in">Get in touch</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/vidhur.b" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">vidhur</span>
+        <span class="logo-slash">/</span>
+        <span class="logo-sub">firmware</span>
+        <span class="logo-bracket">]</span>
+      </a>
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <div class="scope wrap" data-reveal>
-      <div class="scope-row">
-        <div class="scope-label"><span class="ch ch-wlan">CH1</span> WLAN</div>
-        <div class="trace-wrap"><svg id="trace-wlan" class="trace-svg" viewBox="0 0 2000 60" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-      </div>
-      <div class="scope-row">
-        <div class="scope-label"><span class="ch ch-bt">CH2</span> BT</div>
-        <div class="trace-wrap"><svg id="trace-bt" class="trace-svg" viewBox="0 0 2000 60" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-      </div>
-      <p class="scope-caption">Two radios, one antenna window — arbitrated in firmware, not left to chance.</p>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- STATS STRIP -->
-  <section class="readout">
-    <div class="wrap readout-grid">
-      <div class="readout-item" data-reveal>
-        <span class="readout-num">7+</span>
-        <span class="readout-label">years in embedded firmware</span>
-      </div>
-      <div class="readout-item" data-reveal>
-        <span class="readout-num">5</span>
-        <span class="readout-label">global OEMs shipped &mdash; VW · Mercedes&#8209;Benz · JLR · Tata · Citro&euml;n</span>
-      </div>
-      <div class="readout-item" data-reveal>
-        <span class="readout-num">WFA</span>
-        <span class="readout-label">CarPlay &amp; Android Auto certified features</span>
-      </div>
-      <div class="readout-item" data-reveal>
-        <span class="readout-num">0x02</span>
-        <span class="readout-label">radios arbitrated per SoC, zero dropped calls</span>
-      </div>
-    </div>
-  </section>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-eyebrow">RF &amp; EMBEDDED SYSTEMS</div>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="wrap section-grid">
-      <div class="section-head" data-reveal>
-        <p class="section-eyebrow">01 · About</p>
-        <h2>Firmware that lives where hardware meets the OS.</h2>
-      </div>
-      <div class="section-body" data-reveal>
-        <p>
-          I'm an embedded firmware engineer who works the full stack of a radio subsystem &mdash;
-          from mailbox design and MAC-layer arbitration on ARM Cortex&#8209;M, up through the
-          Android Bluetooth stack, HAL, and framework. My specialty is coexistence: the logic
-          that lets Wi&#8209;Fi and Bluetooth share a single antenna without stepping on each
-          other's packets.
+        <div class="hero-status-pill">
+          <div class="status-dot"></div>
+          SYSTEM ONLINE — COEX ACTIVE
+        </div>
+
+        <h1>
+          <span class="hero-name-line">Vidhur B Preman</span>
+          <span class="hero-subtitle">Staff Engineer, WLAN &amp; BT Coexistence</span>
+        </h1>
+
+        <p class="hero-lede">
+          I write the firmware that decides, microsecond by microsecond, whether a chip's antenna
+          belongs to Wi&#8209;Fi or Bluetooth. Seven-plus years turning two radios and one shared
+          medium into something that just works &mdash; from Samsung Exynos silicon to automotive
+          infotainment systems.
         </p>
-        <p>
-          At Samsung Semiconductor India Research, that means designing real-time coexistence
-          state machines for Exynos SoCs, root-causing cross-layer defects with sniffer logs and
-          GDB stack traces, and validating behaviour in anechoic chambers. Before that, at
-          Visteon, I built and certified the Wi&#8209;Fi/Bluetooth features that ship inside
-          production cars &mdash; CarPlay, Android Auto, dual&#8209;phone pairing, ASIL&#8209;compliant
-          safety firmware.
-        </p>
-        <p>
-          I'm most useful in the room where hardware engineers, BT stack teams, and platform
-          software argue about whose layer owns a bug &mdash; because I can read a spectrum
-          capture, a stack trace, and a state machine with equal fluency.
-        </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="section section-alt" id="skills">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="section-eyebrow">02 · Skills</p>
-        <h2>Spec sheet.</h2>
-      </div>
-      <div class="spec-table" data-reveal>
-        <div class="spec-row">
-          <div class="spec-key">Wi&#8209;Fi</div>
-          <div class="spec-val">IEEE 802.11 a/b/g/n/ac/ax &middot; STA &amp; AP &middot; Wi&#8209;Fi NAN &middot; Wi&#8209;Fi P2P / Wi&#8209;Fi Direct &middot; WLAN&#8209;BT coexistence</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Debug &amp; Analysis</div>
-          <div class="spec-val">Wireshark &middot; btsnoop &middot; Ellisys &middot; Teledyne X500 &middot; GDB (crash / stack-trace analysis) &middot; Trace32 &middot; spectrum captures</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Bluetooth &amp; AOSP</div>
-          <div class="spec-val">BT Classic, BLE, LE Audio &middot; Android AOSP Bluetooth stack &middot; Framework / HAL integration &middot; BlueZ / Linux Bluetooth</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Programming</div>
-          <div class="spec-val">C &middot; C++ &middot; Python &middot; Bash &middot; Java</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Platforms</div>
-          <div class="spec-val">Android AOSP &middot; Android Automotive (AAOS) &middot; embedded Linux &middot; RTOS &middot; systemd</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Tooling &amp; CI/CD</div>
-          <div class="spec-val">Docker &middot; Jenkins &middot; JFrog Artifactory &middot; Git &middot; Jira &middot; automated test / flashing frameworks</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section" id="experience">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="section-eyebrow">03 · Experience</p>
-        <h2>Log.</h2>
+        <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Initialize Link</a>
+        <a class="btn btn-ghost" href="Vidhur_B_Preman_Resume.pdf" target="_blank" rel="noopener">Download Resume &darr;</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/vidhur.b" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
       </div>
 
-      <div class="timeline">
 
-        <article class="tl-entry" data-reveal>
-          <div class="tl-meta">
-            <span class="tl-date">FEB 2023 &rarr; PRESENT</span>
-            <span class="tl-tag">current</span>
+
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat-item" data-reveal data-reveal-delay="1">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">Years in embedded firmware engineering</span>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="2">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Global OEMs shipped (VW, JLR, Mercedes...)</span>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="3">
+          <span class="stat-num">WFA</span>
+          <span class="stat-label">CarPlay &amp; Android Auto certified features</span>
+        </div>
+        <div class="stat-item" data-reveal data-reveal-delay="4">
+          <span class="stat-num">0x02</span>
+          <span class="stat-label">Radios arbitrated per SoC, zero dropped calls</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-label" data-reveal>01_PROFILE_DATA</div>
+        <div class="section-head" data-reveal>
+          <h2>Firmware that lives where hardware meets the OS.</h2>
+        </div>
+
+        <div class="about-grid" data-reveal>
+          <div class="about-text">
+            <p>
+              I'm an embedded firmware engineer who works the full stack of a radio subsystem &mdash;
+              from <span class="about-highlight">mailbox design and MAC-layer arbitration on ARM Cortex-M</span>,
+              up through the Android Bluetooth stack, HAL, and framework. My specialty is coexistence:
+              the logic that lets Wi-Fi and Bluetooth share a single antenna without stepping on each other's packets.
+            </p>
+            <p>
+              At Samsung Semiconductor India Research, that means designing real-time coexistence state machines
+              for <span class="about-highlight">Exynos SoCs</span>, root-causing cross-layer defects with sniffer logs
+              and GDB stack traces, and validating behaviour in anechoic chambers.
+            </p>
+            <p>
+              Before that, at Visteon, I built and certified the Wi-Fi/Bluetooth features that ship inside production
+              cars
+              &mdash; CarPlay, Android Auto, dual-phone pairing, and <span class="about-highlight">ASIL-compliant safety
+                firmware</span>.
+              I'm most useful in the room where hardware engineers, BT stack teams, and platform software argue about
+              whose layer owns a bug.
+            </p>
           </div>
-          <div class="tl-body">
-            <h3>Staff Engineer &mdash; WLAN and BT Firmware</h3>
-            <p class="tl-org">Samsung Semiconductor India Research &middot; Bengaluru</p>
-            <ul>
-              <li>Design and maintain the WLAN&#8209;BT coexistence subsystem on Samsung Exynos SoCs &mdash; mailbox design, arbitration logic, and switch control between the WLAN and BT radios, across Classic BT, BLE, and LE Audio.</li>
-              <li>Architect real-time coexistence state machines in C for dual-radio SoCs; write low-level embedded software for ARM Cortex&#8209;M, optimising RAM footprint and execution time for MAC-layer arbitration.</li>
-              <li>Build multi-protocol scheduling algorithms that dynamically prioritise radio access by packet type &mdash; giving SCO/eSCO audio priority over background Wi&#8209;Fi traffic.</li>
-              <li>Debug and root-cause cross-layer BT/Wi&#8209;Fi firmware issues using HCI/BT sniffer logs, GDB stack-trace analysis, and Trace32, working directly with BT stack and firmware teams on customer-reported defects.</li>
-              <li>Debug RF interference and timing-critical packet drops with Teledyne X500 and Ellisys protocol sniffers; validate coexistence behaviour with OTA captures in anechoic chambers.</li>
-              <li>Design hardware-software co-design frameworks that offload critical timing-loop arbitration from the CPU to dedicated lower-MAC hardware.</li>
-              <li>Mentor engineers across a globally distributed org spanning WLAN MAC, PHY, BT stack, BT firmware, and hardware design &mdash; and author the documentation that keeps everyone aligned.</li>
+
+          <div class="about-sidebar">
+            <div class="sidebar-card">
+              <div class="card-label">CORE_STACK</div>
+              <div class="stack-chips">
+                <span class="chip chip-neutral">C/C++</span>
+                <span class="chip chip-wlan">IEEE 802.11a-ax</span>
+                <span class="chip chip-bt">Bluetooth / BLE</span>
+                <span class="chip chip-neutral">Linux</span>
+                <span class="chip chip-neutral">Android AOSP</span>
+                <span class="chip chip-neutral">ARM Cortex-M</span>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <div class="card-label">SYS_INFO</div>
+              <div class="info-rows">
+                <div class="info-row">
+                  <span class="info-key">LOCATION</span>
+                  <span class="info-val">Bengaluru, India</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-key">SPECIALTY</span>
+                  <span class="info-val">WLAN/BT Coexistence</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-key">DEBUG_TOOLS</span>
+                  <span class="info-val">Wireshark, Trace32, X500</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="wrap">
+        <div class="section-label" data-reveal>02_CAPABILITIES</div>
+        <div class="section-head" data-reveal>
+          <h2>Technical Specification.</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card wlan-card" data-reveal data-reveal-delay="1">
+            <div class="skill-card-icon">📡</div>
+            <div class="skill-card-title">Wi-Fi Subsystems</div>
+            <p>Implementation and debugging of core Wi-Fi protocols and modes.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">IEEE 802.11 a/b/g/n/ac/ax</span>
+              <span class="skill-tag">STA &amp; AP Mode</span>
+              <span class="skill-tag">Wi-Fi NAN</span>
+              <span class="skill-tag">Wi-Fi Direct (P2P)</span>
+              <span class="skill-tag">WLAN-BT Coexistence</span>
+            </div>
+          </div>
+
+          <div class="skill-card bt-card" data-reveal data-reveal-delay="2">
+            <div class="skill-card-icon">🎧</div>
+            <div class="skill-card-title">Bluetooth &amp; AOSP</div>
+            <p>Full stack Bluetooth development from firmware to Android framework.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">BT Classic</span>
+              <span class="skill-tag">BLE</span>
+              <span class="skill-tag">LE Audio</span>
+              <span class="skill-tag">Android AOSP BT Stack</span>
+              <span class="skill-tag">HAL Integration</span>
+              <span class="skill-tag">BlueZ / Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-card neutral-card" data-reveal data-reveal-delay="3">
+            <div class="skill-card-icon">🔬</div>
+            <div class="skill-card-title">Debug &amp; Analysis</div>
+            <p>Deep packet inspection and hardware-level root cause analysis.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">btsnoop</span>
+              <span class="skill-tag">Ellisys</span>
+              <span class="skill-tag">Teledyne X500</span>
+              <span class="skill-tag">GDB / Stack-trace</span>
+              <span class="skill-tag">Trace32</span>
+              <span class="skill-tag">Spectrum Captures</span>
+            </div>
+          </div>
+
+          <div class="skill-card neutral-card" data-reveal data-reveal-delay="1">
+            <div class="skill-card-icon">💻</div>
+            <div class="skill-card-title">Programming</div>
+            <p>Low-level embedded software development and scripting.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Bash</span>
+              <span class="skill-tag">Java</span>
+            </div>
+          </div>
+
+          <div class="skill-card neutral-card" data-reveal data-reveal-delay="2">
+            <div class="skill-card-icon">🖥️</div>
+            <div class="skill-card-title">Platforms</div>
+            <p>Target environments spanning mobile, automotive, and IoT.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Android AOSP</span>
+              <span class="skill-tag">Android Automotive (AAOS)</span>
+              <span class="skill-tag">Embedded Linux</span>
+              <span class="skill-tag">RTOS</span>
+              <span class="skill-tag">systemd</span>
+            </div>
+          </div>
+
+          <div class="skill-card neutral-card" data-reveal data-reveal-delay="3">
+            <div class="skill-card-icon">⚙️</div>
+            <div class="skill-card-title">Tooling &amp; CI/CD</div>
+            <p>Infrastructure for automated testing, flashing, and delivery.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">JFrog Artifactory</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Jira</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-label" data-reveal>03_EXECUTION_LOG</div>
+        <div class="section-head" data-reveal>
+          <h2>Professional Track Record.</h2>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-track"></div>
+
+          <!-- Samsung -->
+          <article class="tl-entry" data-reveal>
+            <div class="tl-meta">
+              <span class="tl-date">FEB 2023 &mdash; PRESENT</span>
+              <span class="tl-badge current">ACTIVE</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-role">Staff Engineer &mdash; WLAN and BT Firmware</h3>
+              <span class="tl-company">Samsung Semiconductor India Research &middot; Bengaluru</span>
+              <ul class="tl-list">
+                <li>Design and maintain the WLAN-BT coexistence subsystem on Samsung Exynos SoCs &mdash; mailbox design,
+                  arbitration logic, and switch control between the WLAN and BT radios, across Classic BT, BLE, and LE
+                  Audio.</li>
+                <li>Architect real-time coexistence state machines in C for dual-radio SoCs; write low-level embedded
+                  software for ARM Cortex-M, optimising RAM footprint and execution time for MAC-layer arbitration.</li>
+                <li>Build multi-protocol scheduling algorithms that dynamically prioritise radio access by packet type
+                  &mdash; giving SCO/eSCO audio priority over background Wi-Fi traffic.</li>
+                <li>Debug and root-cause cross-layer BT/Wi-Fi firmware issues using HCI/BT sniffer logs, GDB stack-trace
+                  analysis, and Trace32.</li>
+                <li>Debug RF interference and timing-critical packet drops with Teledyne X500 and Ellisys protocol
+                  sniffers; validate coexistence behaviour with OTA captures in anechoic chambers.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Visteon -->
+          <article class="tl-entry" data-reveal>
+            <div class="tl-meta">
+              <span class="tl-date">JUL 2019 &mdash; FEB 2023</span>
+              <span class="tl-badge past">COMPLETED</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-role">Embedded Software Engineer</h3>
+              <span class="tl-company">Visteon Corporation &middot; Chennai</span>
+              <ul class="tl-list">
+                <li>Developed and integrated Bluetooth and Wi-Fi features for automotive infotainment on Android AOSP,
+                  including driver integration and HAL/framework bring-up on Qualcomm, NXP, and MediaTek SoCs.</li>
+                <li>Built Wi-Fi Access Point, Station, and Wi-Fi Direct features across 802.11n/ac/ax and WPA2/WPA3;
+                  authored the design docs, sign-offs, and test plans behind them.</li>
+                <li>Optimised Bluetooth audio streaming quality across SBC, AAC, and aptX codecs; developed Secure
+                  Simple Pairing (SSP) and Out-of-Band (OOB) pairing.</li>
+                <li>Root-caused Bluetooth and Wi-Fi interoperability and coexistence issues on production hardware using
+                  HCI logs, PCAP/sniffer logs, OTA captures, ADB, and Wireshark.</li>
+                <li>Delivered and certified CarPlay, Android Auto, and Wi-Fi Alliance features, partnering directly with
+                  Volkswagen, Mercedes-Benz, Jaguar Land Rover, Tata Motors, and Citroën engineering teams.</li>
+                <li>Developed under ASPICE-compliant processes with MISRA C/C++ for safety-relevant firmware, meeting
+                  ISO 26262 (ASIL) requirements.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- FLDEC -->
+          <article class="tl-entry" data-reveal>
+            <div class="tl-meta">
+              <span class="tl-date">MAR 2019 &mdash; MAY 2019</span>
+              <span class="tl-badge past">COMPLETED</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-role">RTL Design Intern</h3>
+              <span class="tl-company">FLDEC &middot; India</span>
+              <ul class="tl-list">
+                <li>Designed and simulated RTL blocks using VHDL and Verilog on Xilinx Vivado, ModelSim, and FPGA
+                  platforms.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+      <div class="marquee-label" data-reveal>SHIPPED WITH GLOBAL OEMS</div>
+      <div class="marquee-track">
+        <!-- Duplicate content for smooth infinite scroll -->
+        <div class="marquee-item"><span class="m-dot"></span> Volkswagen</div>
+        <div class="marquee-item"><span class="m-dot"></span> Mercedes-Benz</div>
+        <div class="marquee-item"><span class="m-dot"></span> Jaguar Land Rover</div>
+        <div class="marquee-item"><span class="m-dot"></span> Tata Motors</div>
+        <div class="marquee-item"><span class="m-dot"></span> Citroën</div>
+        <div class="marquee-item"><span class="m-dot"></span> Wi-Fi Alliance (WFA)</div>
+        <div class="marquee-item"><span class="m-dot"></span> Apple CarPlay</div>
+        <div class="marquee-item"><span class="m-dot"></span> Android Auto</div>
+
+        <div class="marquee-item"><span class="m-dot"></span> Volkswagen</div>
+        <div class="marquee-item"><span class="m-dot"></span> Mercedes-Benz</div>
+        <div class="marquee-item"><span class="m-dot"></span> Jaguar Land Rover</div>
+        <div class="marquee-item"><span class="m-dot"></span> Tata Motors</div>
+        <div class="marquee-item"><span class="m-dot"></span> Citroën</div>
+        <div class="marquee-item"><span class="m-dot"></span> Wi-Fi Alliance (WFA)</div>
+        <div class="marquee-item"><span class="m-dot"></span> Apple CarPlay</div>
+        <div class="marquee-item"><span class="m-dot"></span> Android Auto</div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <section class="section section-alt" id="education">
+      <div class="wrap">
+        <div class="section-label" data-reveal>04_ACADEMICS</div>
+        <div class="section-head" data-reveal>
+          <h2>Education &amp; R&amp;D.</h2>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card" data-reveal data-reveal-delay="1">
+            <div class="edu-card-head">
+              <span class="edu-degree">B.E. — Electronics &amp; Communication Engineering</span>
+              <span class="edu-year">2015 — 2019</span>
+            </div>
+            <span class="edu-school">Veltech Engineering College, Anna University &middot; CGPA 6.7/10</span>
+
+            <ul class="edu-list">
+              <li>Final year project: optimised Booth Radix-8 MAC unit (VLSI) &mdash; patent applied, research paper
+                published in IJTE Journal.</li>
+              <li>NPTEL certification: Programming, Data Structures and Algorithms using Python.</li>
             </ul>
           </div>
-        </article>
 
-        <article class="tl-entry" data-reveal>
-          <div class="tl-meta">
-            <span class="tl-date">JUL 2019 &rarr; FEB 2023</span>
+          <div class="achievements-card" data-reveal data-reveal-delay="2">
+            <div class="card-label">NOTABLE_ACHIEVEMENTS</div>
+            <div class="ach-grid">
+              <div class="ach-item">
+                <div class="ach-icon">🏆</div>
+                <div class="ach-title">Hackathon Finalist</div>
+                <div class="ach-desc">Eureka Hackathon, G.H. Raisoni Institute &mdash; Li-Fi based comms module for
+                  autonomous vehicles.</div>
+              </div>
+              <div class="ach-item">
+                <div class="ach-icon">🚁</div>
+                <div class="ach-title">Defence Expo Demo</div>
+                <div class="ach-desc">Demonstrated a fire-extinguishing drone at Defence Expo, CVRDE, Avadi.</div>
+              </div>
+              <div class="ach-item">
+                <div class="ach-icon">📜</div>
+                <div class="ach-title">Patent Applied</div>
+                <div class="ach-desc">Optimised Booth Radix-8 MAC Unit (VLSI).</div>
+              </div>
+            </div>
           </div>
-          <div class="tl-body">
-            <h3>Embedded Software Engineer &mdash; BT/WLAN Automotive Infotainment</h3>
-            <p class="tl-org">Visteon Corporation &middot; Chennai</p>
-            <ul>
-              <li>Developed and integrated Bluetooth and Wi&#8209;Fi features for automotive infotainment on Android AOSP, including driver integration and HAL/framework bring-up on Qualcomm, NXP, and MediaTek SoCs.</li>
-              <li>Built Wi&#8209;Fi Access Point, Station, and Wi&#8209;Fi Direct features across 802.11n/ac/ax and WPA2/WPA3; authored the design docs, sign-offs, and test plans behind them.</li>
-              <li>Integrated Wi&#8209;Fi/BT coexistence mechanisms to prevent signal interference; implemented multi-profile and multi-device connectivity, including dual-phone pairing.</li>
-              <li>Optimised Bluetooth audio streaming quality across SBC, AAC, and aptX codecs; developed Secure Simple Pairing (SSP) and Out-of-Band (OOB) pairing.</li>
-              <li>Worked directly with silicon vendors (Qualcomm, NXP) on chipset bring-up; ported and configured vendor-specific HCI drivers and firmware patches.</li>
-              <li>Modified and extended the Android Bluetooth stack, Linux BlueZ, and OpenSynergy BT stack; bridged the BT stack to vehicle applications over Binder and DBus IPC.</li>
-              <li>Root-caused Bluetooth and Wi&#8209;Fi interoperability and coexistence issues on production and pre-production hardware using HCI logs, PCAP/sniffer logs, OTA captures, ADB, and Wireshark; built automated regression frameworks.</li>
-              <li>Delivered and certified CarPlay, Android Auto, and Wi&#8209;Fi Alliance features, partnering directly with Volkswagen, Mercedes&#8209;Benz, Jaguar Land Rover, Tata Motors, and Citro&euml;n engineering teams.</li>
-              <li>Developed under ASPICE-compliant processes with MISRA C/C++ for safety-relevant firmware, meeting ISO 26262 (ASIL) requirements including watchdog and safe-state handling.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="tl-entry" data-reveal>
-          <div class="tl-meta">
-            <span class="tl-date">MAR 2019 &rarr; MAY 2019</span>
-          </div>
-          <div class="tl-body">
-            <h3>RTL Design Intern</h3>
-            <p class="tl-org">FLDEC &middot; India</p>
-            <ul>
-              <li>Designed and simulated RTL blocks using VHDL and Verilog on Xilinx Vivado, ModelSim, and FPGA platforms.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="section section-alt" id="education">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="section-eyebrow">04 · Education</p>
-        <h2>Where it started.</h2>
-      </div>
-      <div class="edu-card" data-reveal>
-        <div class="edu-top">
-          <h3>B.E. &mdash; Electronics and Communication Engineering</h3>
-          <span class="tl-date">2015 &rarr; 2019</span>
         </div>
-        <p class="tl-org">Veltech Engineering College, Anna University &middot; CGPA 6.7/10</p>
-        <ul>
-          <li>Final year project: optimised Booth Radix&#8209;8 MAC unit (VLSI) &mdash; patent applied, research paper published in IJTE Journal.</li>
-          <li>Finalist, Eureka Hackathon, G.H. Raisoni Institute of Technology &mdash; a Li&#8209;Fi based communication module for autonomous vehicles.</li>
-          <li>Demoed a fire-extinguishing drone at Defence Expo, CVRDE, Avadi.</li>
-          <li>NPTEL certification: Programming, Data Structures and Algorithms using Python.</li>
-        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="wrap contact-inner" data-reveal>
-      <p class="section-eyebrow">05 · Contact</p>
-      <h2>Let's talk radios.</h2>
-      <p class="contact-lede">Open to conversations on coexistence firmware, embedded systems roles, or anything with two protocols fighting over one antenna.</p>
-      <div class="contact-grid">
-        <a class="contact-item" href="mailto:vidhur@outlook.in">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">vidhur@outlook.in</span>
-        </a>
-        <a class="contact-item" href="tel:+917010092057">
-          <span class="contact-label">Phone</span>
-          <span class="contact-value">+91&nbsp;7010&nbsp;092&nbsp;057</span>
-        </a>
-        <a class="contact-item" href="https://www.linkedin.com/in/vidhur.b" target="_blank" rel="noopener">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">/in/vidhur.b</span>
-        </a>
-        <span class="contact-item contact-item-static">
-          <span class="contact-label">Location</span>
-          <span class="contact-value">Bengaluru, India</span>
-        </span>
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-glow"></div>
+      <div class="wrap contact-inner">
+        <div class="section-label" style="justify-content: center; margin-bottom: 24px;" data-reveal>
+          05_ESTABLISH_CONNECTION</div>
+        <h2 data-reveal>Let's talk radios.</h2>
+        <p class="contact-lede" data-reveal>
+          Open to conversations on coexistence firmware, embedded systems roles,
+          or anything with two protocols fighting over one antenna.
+        </p>
+
+        <div class="contact-actions" data-reveal>
+          <a class="btn btn-primary" href="mailto:vidhur@outlook.in">Ping: vidhur@outlook.in</a>
+        </div>
+
+        <div class="contact-grid" data-reveal>
+          <a class="contact-item" href="mailto:vidhur@outlook.in">
+            <span class="contact-key">EMAIL_ADDR</span>
+            <span class="contact-val">vidhur@outlook.in</span>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/vidhur.b" target="_blank" rel="noopener">
+            <span class="contact-key">LINKEDIN_URL</span>
+            <span class="contact-val">linkedin.com/in/vidhur.b</span>
+          </a>
+        </div>
       </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-built">
+        <span>SYS_STATUS: OPTIMAL</span>
+        <div class="footer-signal">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <span>&copy;
+        <script>document.write(new Date().getFullYear())</script> Vidhur B Preman
+      </span>
+      <a href="#top">TERMINATE_SESSION (Top &uarr;)</a>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>&copy; <span id="year"></span> Vidhur B Preman</span>
-    <a href="#top">Back to top ↑</a>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
